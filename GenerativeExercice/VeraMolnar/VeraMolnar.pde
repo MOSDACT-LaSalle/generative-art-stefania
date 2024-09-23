@@ -35,3 +35,8 @@ void draw() {
     }
   }
 }
+
+
+void keyPressed() {
+  redraw();
+}
