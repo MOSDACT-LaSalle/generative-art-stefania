@@ -10,7 +10,7 @@ function setup() {
   createCanvas(500, 500);
   dim = (width-2*margin)/nb;
   angleMode(DEGREES);
-  createLoop({duration:2, gif:true});
+  //createLoop({duration:2, gif:true}); //per creare GIF
 }
 
 function draw() {
@@ -28,8 +28,8 @@ function draw() {
       
       x = margin+dim/2+i*dim;
       y = margin+dim/2+j*dim;
-      //f= sin(frequenza *frameCount +3.0*dist(width/2, height/2,x,y));
-f= sin(frequenza *animLoop.theta +3.0*dist(width/2, height/2,x,y));
+      f= sin(frequenza *frameCount +3.0*dist(width/2, height/2,x,y));
+//f= sin(frequenza *animLoop.theta +3.0*dist(width/2, height/2,x,y)); //per creare GIF
       
       circle(x, y,f*dim) 
       //circle(margin+dim/2+i*dim, margin+dim/2+j*dim, f*dim);
