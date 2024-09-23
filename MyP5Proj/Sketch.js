@@ -1,34 +1,41 @@
-let cityscape; // Image variable for the cityscape silhouette
-let bgColor;
+let nb = 20;
+let dim =0;
+let margin = 100;
+let f = 0.25;
+let frequenza = -2.5;
+let x,y;
 
-function preload() {
-  // Load the cityscape image from the assets folder
-  cityscape = loadImage('assets/cityscape.png');
-}
 
 function setup() {
-  createCanvas(600, 600);
-  bgColor = color(5, 10, 35); // Dark blue night sky
-  
-  // Resize the cityscape to fit the width of the canvas
-  cityscape.resize(width, height / 2);
+  createCanvas(500, 500);
+  dim = (width-2*margin)/nb;
+  angleMode(DEGREES);
+  createLoop({duration:2, gif:true});
 }
 
 function draw() {
-  background(bgColor);
+  background(0);
+  //noStroke();
+  fill(255);
+  stroke(155);
+  //noFill();
+  rectMode(CENTER);
   
-  // Draw the red circle (sun/moon)
-  noStroke();
-  fill(255, 0, 0);
-  ellipse(width / 2, height / 2, 300, 300);
-  
-  // Draw the cityscape silhouette on the bottom
-  image(cityscape, 0, height - cityscape.height);
-  
-  // Draw the inverted cityscape silhouette on the top
-  push();
-  translate(width, 0);
-  scale(-1, 1); // Flip horizontally
-  image(cityscape, 0, 0);
-  pop();
+  for(let j=0; j<nb; j=j+1)
+  {
+    for(let i=0; i<nb; i=i+1)
+    {
+      
+      x = margin+dim/2+i*dim;
+      y = margin+dim/2+j*dim;
+      //f= sin(frequenza *frameCount +3.0*dist(width/2, height/2,x,y));
+f= sin(frequenza *animLoop.theta +3.0*dist(width/2, height/2,x,y));
+      
+      circle(x, y,f*dim) 
+      //circle(margin+dim/2+i*dim, margin+dim/2+j*dim, f*dim);
+      //rect(dim/2+i*dim, dim/2+j*dim, 0.7*dim, 0.2*dim);
+      
+      
+    }
+  }
 }
