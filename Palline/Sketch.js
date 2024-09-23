@@ -7,7 +7,7 @@ let x,y;
 
 
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(800, 1200); //TBD
   dim = (width-2*margin)/nb;
   angleMode(DEGREES);
   //createLoop({duration:2, gif:true}); //per creare GIF
