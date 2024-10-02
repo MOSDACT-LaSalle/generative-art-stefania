@@ -4,7 +4,8 @@ let dMin = 100;
 let p = Array(nb);
 
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(windowWidth, windowHeight);
+
   for(let i=0; i<nb; i=i+1)
   {
      p[i] = new Particle(random(0,width),random(0,height)); 

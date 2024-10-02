@@ -9,7 +9,7 @@ let noiseAngle = 360;
 let noiseSpeed = 1.2;
 
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
   background("#243748");
 
